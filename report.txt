@@ -1,0 +1,24 @@
+Overview:
+
+We will conduct the pen test on the Super Duper Sketchy corporation’s server to expose security flaws and holes within the server. We want to expose how simple it is to gain access to the server and find private information. The more we find, the better we’ll be able to help Super Duper Sketchy Corporation improve their security.
+ 
+Methodology:
+
+	After downloading aircrack, we generated a .txt file, through a python script, with all possible wifi passwords that follows the structure mentioned in the spec’s Figure 2. Using the provided -01.cap file, csv file and our generated txt file, we ran the command aircrack-ng -a2 -b 98:DE:D0:78:F3:C3 -w /Users/saritm/Desktop/output.txt /Users/saritm/Desktop/-01.cap to obtain the password (EECS388-5bo) and login to SDSC’s WiFi. After retrieving the wifi password, we then used nmap (nmap -sP 192.168.0.143/24) to map the open ports in the network and identify available IP addresses. Through trial and error, we found the right IP address. We then used netcat to spoof an email from an employee to the helpdesk using (nc -C 192.168.0.23 25), attaching “Reply-to: saritm@umich.edu” in the data section, to get the helpdesk to return a password that gives us access to the server. For username ‘saritm’, we retrieved the password ‘pZBCxDvr’.
+
+	Once we obtained access to the server, we read through the “Welcome.txt” file which gave us a hostname and port name which allowed us to login through MWireless. We then downloaded the TCP dump through scp to our local computer and sifted through the HTTP requests. Through the authorized get requests, we found a credential and a secret message. 
+ 
+Findings:
+
+Wifi password: EECS388-5bo
+Saritm pssword: pZBCxDvr
+(backdoor) Hostname/port: superdupersketchycorp.com 47923
+Hidden message in TCPdump, HTTP protocol: “Layoffs are coming! Just letting the exec's know, we'll be laying off 30% of the workforce come March. Be sure not to tell the employees until it's time. If this got out, our quarterly projections would drop.”
+Hidden message in TCPdump, HTTP protocol: “The password to the executive lounge has changed.Please use 'h4ppie8rthDay'.”
+Credentials: mattley:388roxmysocks
+
+Remediation:
+
+	In order to increase network security, don’t print out flyers with the wifi password template. Even further, limiting the variability of the password to just the last three characters of EECS388-XXX easily allows hackers to generate a wordlist. Instead, the password should have 11 characters which are variable, and these characters can be any digit between [0-9,a-z,A-Z,@!#$%&?]. This will exponentially delay an attacker’s ability to hack into the wifi. 
+To prevent phishing attacks, don’t allow the helpdesk to respond with the password outright. If a user forgets their password, ensure that they can answer security questions, and then verify authenticity by sending a code to their phone or other registered device of choice. After this duo-factor authentication, the helpdesk can then send an email to reset the password. Furthermore, the port name through which others can access data should not be given out in the Welcome.txt file which can be viewed by all, as it allowed us to access the server through a backdoor. It could instead be provided to employees through secure email, that are known to be harder to crack. Furthermore, the data packets show us that the admin is logging in and sending data through HTTP, leaving the transmitted data (4,5) as well as admin credentials (6) exposed for attackers to view and use as they please. Users should always be sending data through HTTPS.    
+

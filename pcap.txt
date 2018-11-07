@@ -1,0 +1,293 @@
+# Question 1
+
+IP: 10.0.2.1    MAC: 00:26:08:e5:66:07
+IP: 10.0.2.2    MAC: 04:0c:ce:d8:0f:fa
+IP: 10.0.2.255  MAC: ff:ff:ff:ff:ff:ff
+IP: 10.0.2.3    MAC: 8c:a9:82:50:f0:a6
+IP: 192.168.1.1 MAC: 00:26:08:e5:66:07
+
+# Question 2
+
+The pcap file shows us that the packet sizes are small, and most of the traffic is directed to websites like youtube, facebook, wikipedia as well as other umich websites. From these characteristics, we can infer that it is a small network that is close to campus generally used by umich students. 
+
+# Question 3
+
+3a. dl.xs4all.nl
+
+3b. Active connection, since frame 16546 sent a PORT request, which is a characteristic of an active FTP, instead of a PASV request.
+
+3c. FTP doesn’t provide any encryption for the data it transfers. This can be observed in request 16502 where the password entered is visible for others to view.
+ 
+3d. HTTPS and SFTP are both great alternatives to FTP. AS2 runs over HTTPS meaning that HTTPS has many updated security protocols: authentication, encryption and integrity checks. SFTP also uses the above security protocols, but also only operates on a single port making it more firewall-friendly. 
+
+
+# Question 4
+
+4a. youtube.com
+
+4b. HTTPS cannot protect against (a). In order to determine the IP address, the server must look up the domain in the DNS.
+
+4c. 
+
+SHA: 
+
+TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA (0xc00a) 
+Key: ECDHE
+Signature: ECDSA
+Bulk Encryption: AES_256_CBC
+Digest: SHA
+
+TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014)
+Key: ECDHE
+Signature: RSA
+Bulk Encryption: AES_256_CBC
+Digest: SHA
+
+TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA (0x0088)
+Key: DHE
+Signature: RSA
+Bulk Encryption: CAMELLIA_256_CBC
+Digest: SHA
+
+TLS_DHE_DSS_WITH_CAMELLIA_256_CBC_SHA (0x0087)
+Key: DHE
+Signature: DSS
+Bulk Encryption: CAMELLIA_256_CBC
+Digest: SHA
+
+TLS_DHE_RSA_WITH_AES_256_CBC_SHA (0x0039)
+Key: DHE
+Signature: RSA
+Bulk Encryption: AES_256_CBC
+Digest: SHA
+
+TLS_DHE_DSS_WITH_AES_256_CBC_SHA (0x0038)
+Key: DHE
+Signature: DSS
+Bulk Encryption: ES_256_CBC
+Digest: SHA
+
+TLS_ECDH_RSA_WITH_AES_256_CBC_SHA (0xc00f)
+Key: ECDHE
+Signature: RSA
+Bulk Encryption: AES_256_CBC
+Digest: SHA
+
+TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA (0xc005)
+Key: ECDHE
+Signature: ECDSA
+Bulk Encryption: AES_256_CBC
+Digest: SHA
+
+TLS_RSA_WITH_CAMELLIA_256_CBC_SHA (0x0084)
+Key: None
+Signature: RSA
+Bulk Encryption: CAMELLIA_256_CBC
+Digest: SHA
+
+TLS_RSA_WITH_AES_256_CBC_SHA (0x0035)
+Key: None
+Signature: RSA
+Bulk Encryption: AES_256_CBC
+Digest: SHA
+
+TLS_ECDHE_ECDSA_WITH_RC4_128_SHA (0xc007)
+Key: ECDH
+Signature: ECDSA
+Bulk Encryption: RC4_128
+Digest: SHA
+
+TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA (0xc009)
+Key: ECDH
+Signature: ECDSA
+Bulk Encryption: AES_128_CBC
+Digest: SHA
+
+TLS_ECDHE_RSA_WITH_RC4_128_SHA (0xc011)
+Key: ECDH
+Signature: RSA
+Bulk Encryption: RC4_128
+Digest: SHA
+
+TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (0xc013)
+Key: ECDH
+Signature: RSA
+Bulk Encryption: AES_128_CBC
+Digest: SHA
+
+TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA (0x0045)
+Key: DHE
+Signature: RSA
+Bulk Encryption: CAMELLIA_128_CBC
+Digest: SHA
+
+TLS_DHE_DSS_WITH_CAMELLIA_128_CBC_SHA (0x0044)
+Key: DHE
+Signature: DSS
+Bulk Encryption: CAMELLIA_128_CBC
+Digest: SHA
+
+TLS_DHE_RSA_WITH_AES_128_CBC_SHA (0x0033)
+Key: DHE
+Signature: RSA
+Bulk Encryption: AES_128_CBC
+Digest: SHA
+
+TLS_DHE_DSS_WITH_RC4_128_SHA (0x0066)
+Key: DHE
+Signature: DSS
+Bulk Encryption: RC4_128
+Digest: SHA
+
+TLS_DHE_DSS_WITH_AES_128_CBC_SHA (0x0032)
+Key: DHE 
+Signature: DSS 
+Bulk Encryption: AES_128_CBC 
+Digest: SHA
+
+TLS_ECDH_RSA_WITH_RC4_128_SHA (0xc00c)
+Key: ECDH 
+Signature: RSA 
+Bulk Encryption: RC4_128 
+Digest: SHA 
+
+TLS_ECDH_RSA_WITH_AES_128_CBC_SHA (0xc00e)
+Key: ECDH 
+Signature: RSA 
+Bulk Encryption: AES_128_CBC 
+Digest: SHA
+
+TLS_ECDH_ECDSA_WITH_RC4_128_SHA (0xc002)
+Key: ECDH 
+Signature: ECDSA 
+Bulk Encryption: RC4_128 
+Digest: SHA
+
+TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA (0xc004)
+Key: ECDH 
+Signature: ECDSA 
+Bulk Encryption: AES_128_CBC 
+Digest: SHA
+
+TLS_RSA_WITH_SEED_CBC_SHA (0x0096)
+Key: 
+Signature: RSA 
+Bulk Encryption: SEED_CBC 
+Digest: SHA
+
+TLS_RSA_WITH_CAMELLIA_128_CBC_SHA (0x0041)
+Key: None  
+Signature: RSA 
+Bulk Encryption: CAMELLIA_128_CBC 
+Digest: SHA
+
+TLS_RSA_WITH_RC4_128_SHA (0x0005)
+Key: None  Signature: RSA 
+Bulk Encryption: RC4_128 
+Digest: SHA
+
+TLS_RSA_WITH_AES_128_CBC_SHA (0x002f)
+Key: None  
+Signature: RSA 
+Bulk Encryption: AES_128_CBC 
+Digest: SHA
+
+TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA (0xc008)
+Key: ECDHE 
+Signature: ECDSA 
+Bulk Encryption: 3DES_EDE_CBC 
+Digest: SHA
+
+TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA (0xc012)
+Key: ECDHE 
+Signature: RSA 
+Bulk Encryption: 3DES_EDE_CBC 
+Digest: SHA
+
+
+TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA (0x0016)
+Key: DHE 
+Signature: RSA 
+Bulk Encryption: 3DES_EDE_CBC 
+Digest: SHA
+
+TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA (0x0013)
+Key: DHE 
+Signature: DSS 
+Bulk Encryption: 3DES_EDE_CBC 
+Digest: SHA
+
+TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA (0xc00d)
+Key: ECDH 
+Signature: RSA 
+Bulk Encryption: 3DES_EDE_CBC 
+Digest: SHA
+TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA (0xc003)
+Key: ECDH 
+Signature: ECDSA 
+Bulk Encryption: 3DES_EDE_CBC 
+Digest: SHA
+
+SSL_RSA_FIPS_WITH_3DES_EDE_CBC_SHA (0xfeff)
+Key: None  
+Signature: RSA_FIPS 
+Bulk Encryption: 3DES_EDE_CBC 
+Digest: SHA
+
+TLS_RSA_WITH_3DES_EDE_CBC_SHA (0x000a)
+Key: None 
+Signature: RSA 
+Bulk Encryption: 3DES_EDE_CBC 
+Digest: SHA
+
+E_CBC_SHA (0x000a)
+Key: None	 
+Signature: None
+Bulk Encryption: E_CBC 
+Digest: SHA
+
+C_SHA (0xc00a)
+Key: None 
+Signature: None 
+Bulk Encryption: C 
+Digest: SHA
+
+AES_256_CBC_SHA (0xc005)
+Key: None 
+Signature: None
+Bulk Encryption: AES_256 
+Digest: SHA
+
+ELLIA_128_CBC_SHA (0x0045)
+Key: None 
+Signature: None
+Bulk Encryption: ELLIA_128_CBC 
+Digest: SHA
+
+RC4_128_SHA (0xc002)
+Key: None  
+Signature: None 
+Bulk Encryption: 
+RC4_128 Digest: SHA
+
+TLS_RSA_WITH_RC4_128_MD5 (0x0004) 
+Key: None  
+Signature: RSA 
+Bulk Encryption: RC4_128
+RC4_128 Digest: MD5
+
+
+
+4d. TLS_RSA_WITH_RC4_128_MD5 (0x0004) is particularly worrisome as it does not encrypt the key exchange and still uses MD5 (a hashing equation with known collisions) for message authentication. Additionally, many ciphers don’t hash their key exchange method which is worrisome because that means that keys can be viewed and altered by man-in-the-middle attackers, allowing hackers to pretend to be someone else. 
+
+4e. As shown in data packet 2306, the server chose TLS_ECDHE_RSA_WITH_RC4_128_SHA
+
+# Question 5
+
+5a. The facebook authentication requests are encrypted with the cipher suite: TLS_RSA_WITH_RC4_128_SHA, meaning that the key exchange is not encrypted. 
+
+5b. This allows Man-In-The-Middle attackers to intercept the connection, retrieve the user’s cookies and maliciously use the cookies to act on behalf of the user
+
+5c. The user could update their browser as the server normally chooses the most secure algorithm that is compatible with the browser the user is on. More recent versions of browsers will normally support stronger encryption algorithms and therefore allow encryption of the key exchange.
+
+5d. Based on the ajax requests, the user is using facebook to message friends (eg sending the message "Остановить нюхают My WiFi!" to recipient 842535065), viewing notifications, liking statuses/pictures, loading his timeline and uploading attachments to send.
